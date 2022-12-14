@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Takatof | تكاتف</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{{ url_for("static", filename="assets/bootstrap/css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="{{ url_for("static", filename="assets/fonts/font-awesome.min.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="assets/css/styles.min.css") }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand navigation-clean" style="text-align: center;background: rgb(254,240,208);">
+        <div class="container">
+            <div></div><a href="/"><img alt="تكاتف" src="{{ url_for("static", filename="assets/img/NewLogo.png") }}" style="width: 200px;text-align: center;"></a>
+        </div>
+    </nav>
+    <header class="text-center masthead" style="background: rgba(254,240,208,0.2);padding-right:3vw;padding-left:3vw;">
+                <section>
+            <h1 class="bounce animated infinite mb-5" style="color: rgb(15,115,58);font-family: 'Almarai', sans-serif;font-size: 40px;">منور يالأدمن</h1>
+            <hr style="border-color: var(--bs-red);background: #0f763c;color: var(--bs-red);">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-danger" role="alert" dir="rtl" style="margin-top: 7vh;font-family: 'Almarai', sans-serif;">
+                        {{ message }}
+                      </div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            <div class="container">
+                <form method="POST" action="" style="margin-top: 7vh;font-family: 'Almarai', sans-serif;">
+                    {{ form.hidden_tag() }}
+                    <div class="row" style="margin-top: 3vh;">
+                        <div class="col"><label class="col-form-label" style="color: rgb(15,118,60);font-size: 30px;">اسم المستخدم</label></div>
+                    </div>
+                    <div class="row" style="margin-top: 3vh;">
+                        <div class="col">{{ form.username(class="form-control", style="text-align: left;box-shadow: 1px 1px 4px rgb(0,0,0);", dir="ltr") }}</div>
+                    </div>
+                    <div class="row" style="margin-top: 3vh;">
+                        <div class="col"><label class="col-form-label" style="color: rgb(15,118,60);font-size: 30px;">كلمة المرور</label></div>
+                    </div>
+                    <div class="row" style="margin-top: 3vh;">
+                        <div class="col">{{ form.password(class="form-control", style="text-align: left;box-shadow: 1px 1px 4px rgb(0,0,0);", dir="ltr") }}</div>
+                    </div>
+                    <div class="row" style="margin-top: 3vh;">
+                        <div class="col">{{ form.submit(class="btn", style="color: rgb(15,118,60);background: #ffffff;border-color: rgb(15,118,60);box-shadow: 1px 1px 4px rgb(0,0,0);font-size: 15px;text-align: center;") }}</div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </header>
+    <footer class="footer" style="background: #fef0d0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center my-auto h-100"><img src="{{ url_for("static", filename="assets/img/vwuLogo.png") }}" style="width: 300px; height: auto;"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center my-auto h-100">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="https://sa.linkedin.com/company/kvwu" target="_blank"><i class="fa fa-linkedin fa-2x fa-fw" style="color: rgb(15,118,60);"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/kfupmvolunteers" target="_blank"><i class="fa fa-twitter fa-2x fa-fw" style="color: rgb(15,118,60);"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.instagram.com/kfupm.volunteers" target="_blank"><i class="fa fa-instagram fa-2x fa-fw" style="color: rgb(15,118,60);"></i></a></li>
+                    </ul>
+                </div>    
+            </div>
+            <div class="row" style="margin-top: 3vh;">
+                <div style="color: rgb(15,115,58); font-size: 10px;" class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center my-auto h-100">Developed By S. Al-Faris & M. Al-Safran</div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="{{ url_for("static", filename="assets/bootstrap/js/bootstrap.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="assets/js/script.min.js") }}"></script>
+</body>
+
+</html>
